@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule, Routes, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
-import { LoginService } from "./login-service/login.service"
 import { User } from "../../objects/user"
+import {LoginService} from "../../services/all-services"
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
-  providers: [LoginService]
+  providers: []
 })
 export class LoginComponent implements OnInit {
   message: string = "";
@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
     this.loginService.checkUser(user).subscribe(
       data => {  //successful login
         console.log(data);
+        this.loginService.logSucc();
         this.cookieService.set("user", usr);
         // this.router.navigate(['roles']);
       },

@@ -7,11 +7,6 @@ export class LoginService {
   constructor (
     private http: Http
   ) {}
-  checkUser(user:User) {
-    let body = JSON.stringify(user);
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    return this.http.post('/api/authenticate', body, { headers }).map(res=>{JSON.stringify(res)});
-  }
+
 
 }
