@@ -9,7 +9,7 @@ import { UsersModule } from './users/users.module';
 import { LoginComponent } from './components/login-component/login.component';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpModule } from '@angular/http';
-
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +19,7 @@ import { HttpModule } from '@angular/http';
   ],
   imports: [
     BrowserModule,
-
+    FormsModule,
     UsersModule,
     RolesModule,
     HttpModule,
