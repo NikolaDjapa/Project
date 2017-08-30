@@ -1,5 +1,6 @@
 import { Http, BaseRequestOptions, Response, ResponseOptions, RequestMethod, XHRBackend, RequestOptions } from '@angular/http';
 import { MockBackend, MockConnection } from '@angular/http/testing';
+
  
 export function fakeBackendFactory(backend: MockBackend, options: BaseRequestOptions, realBackend: XHRBackend) {
     // array in local storage for registered users
@@ -75,7 +76,7 @@ export function fakeBackendFactory(backend: MockBackend, options: BaseRequestOpt
             }
  
             // create user
-            if (connection.request.url.endsWith('/api/users') && connection.request.method === RequestMethod.Post) {
+            if (connection.request.url.endsWith('/api/CreateUser') && connection.request.method === RequestMethod.Post) {
                 // get new user object from post body
                 let newUser = JSON.parse(connection.request.getBody());
  
