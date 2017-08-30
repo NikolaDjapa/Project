@@ -10,7 +10,7 @@ import {LoginService} from "./login-service/login.service"
   providers:[LoginService]
 })
 export class LoginComponent implements OnInit {
-
+ 
   usrName: string;
   pass: string;
   constructor(private router: Router,private cookieService: CookieService,private loginService:LoginService) {
