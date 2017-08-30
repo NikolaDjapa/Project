@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CookieService} from 'ngx-cookie-service'
 
 @Component({
   selector: 'app-nav',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav.component.sass']
 })
 export class NavComponent implements OnInit {
-
-  constructor() { }
+  logged = true;
+  constructor(private cookie: CookieService) { }
 
   ngOnInit() {
+   // this.logged = (this.cookie.get('user')!='');
+
   }
 
 }
