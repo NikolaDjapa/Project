@@ -13,11 +13,11 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
   }
-  signUp(email, username, password, password2, event) {
+  signUp(email, password, password2, event) {
     event.preventDefault();
     let user = ({username: email, password: password });
     this.registerServiceService.createUser(user).subscribe(
-      res=>{console.log(res);
+      res=>{
       this.router.navigate(['']);
     },error=>{console.log(error)})
   }

@@ -43,14 +43,14 @@ export function fakeBackendFactory(backend: MockBackend, options: BaseRequestOpt
             }
  
             // get users
-            if (connection.request.url.endsWith('/api/users') && connection.request.method === RequestMethod.Get) {
+            if (connection.request.url.endsWith('/api/AllUsers') && connection.request.method === RequestMethod.Post) {
                 // check for fake auth token in header and return users if valid, this security is implemented server side in a real application
-                if (connection.request.headers.get('Authorization') === 'Bearer fake-jwt-token') {
+                //if (connection.request.headers.get('Authorization') === 'fake-jwt-token') {
                     connection.mockRespond(new Response(new ResponseOptions({ status: 200, body: users })));
-                } else {
+              /*  } else {
                     // return 401 not authorised if token is null or invalid
                     connection.mockRespond(new Response(new ResponseOptions({ status: 401 })));
-                }
+                }*/
  
                 return;
             }
