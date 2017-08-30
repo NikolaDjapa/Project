@@ -1,7 +1,12 @@
-<h2>Login</h2>
-<p style="color:red">{{message}}</p>
-<form>
-<input #username type='email' required pattern="[a-zA-Z0-9]{5,}@[a-z]{3,5}.com" placeholder="Username" oninvalid="this.setCustomValidity('Please Enter valid email')"><br>
-<input #password type="password" required placeholder="Password"><br>
-<button (click)='login(username.value,password.value,$event)'>Login</button> <button (click)='redirect()'>Register</button>
-</form>
+<div class="container col-5 mt-5 col-centered">
+    <div class="card card-container">
+        <h2>Login</h2>
+        <p style="color:red">{{message}}</p>
+        <form class='form-signin'>
+            <input class='form-control' #username type='email' required pattern="[a-zA-Z0-9]{5,}@[a-z]{3,5}.com" placeholder="Username" oninvalid="this.setCustomValidity('Please Enter valid email')"><br>
+            <input class='form-control' #password type="password" required placeholder="Password"><br>
+            <button class="btn btn-lg btn-primary btn-block btn-signin" (click)='login(username.value,password.value,$event)'>Login</button>
+            <button class="btn btn-lg btn-primary btn-block btn-signin" (click)='redirect()'>Register</button>
+        </form>
+    </div>
+</div>
