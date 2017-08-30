@@ -1,8 +1,20 @@
+<div class="container">
+    <div class="card card-container">
 <h2>Sign Up</h2>
 <p style="color:red">{{message}}</p>
 <form>
+<<<<<<< HEAD
 <input #email type='email' required pattern="[a-zA-Z0-9]{5,}@[a-z]{3,5}.com" placeholder="E-mail" oninvalid="this.setCustomValidity('Please Enter valid email')"><br>
 <input #password type="password" required placeholder="Password"><br>
 <input #password2 type="password" required placeholder="Confirm password" ><br>
 <button (click)='signUp(email.value,password.value,password2.value,$event)'>Sign Up</button>
 </form>
+=======
+<input class='form-control' #email type='email' required pattern="[a-zA-Z0-9]{5,}@[a-z]{3,5}.com" placeholder="E-mail" oninvalid="this.setCustomValidity('Please Enter valid email')"><br>
+<input class='form-control' #username type='text' required placeholder="Username"><br>
+<input class='form-control' #password type="password" required placeholder="Password"><br>
+<input class='form-control' #password2 type="password" required placeholder="Confirm password" ><br>
+<button class="btn btn-lg btn-primary btn-block btn-signin" (click)='signUp(email.value,username.value,password.value,password2.value,$event)'>Sign Up</button>
+</form>
+    </div></div>
+>>>>>>> 61d8ac90518b03e75fdb62af3f1c4e14542b3e93
