@@ -20,8 +20,9 @@ export class LoginComponent implements OnInit {
     
   }
 
-  login(usr,pass)
+  login(usr,pass,event)
   {
+    event.preventDefault();
     let users=this.loginService.getUsers();
     users.forEach(user => {
       if(usr==user.userName && pass==user.password)
