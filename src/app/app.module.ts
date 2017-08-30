@@ -12,6 +12,10 @@ import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import {LoginGuard} from './services/all-services';
 
+import { fakeBackendProvider } from './services/fake-back'
+import { MockBackend, MockConnection } from '@angular/http/testing';
+import { BaseRequestOptions } from '@angular/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +32,10 @@ import {LoginGuard} from './services/all-services';
 
     AppRoutingModule
   ],
-  providers: [CookieService,LoginGuard],
+  providers: [CookieService,LoginGuard, 
+    fakeBackendProvider,
+    MockBackend,
+    BaseRequestOptions],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
