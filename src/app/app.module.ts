@@ -9,8 +9,9 @@ import { UsersModule } from './users/users.module';
 import { LoginComponent } from './components/login-component/login.component';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpModule } from '@angular/http';
-import {LoginGuard} from './services/all-services';
+import {LoginGuard,LoginService} from './services/all-services';
 
+ 
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,7 @@ import {LoginGuard} from './services/all-services';
 
     AppRoutingModule
   ],
-  providers: [CookieService,LoginGuard],
+  providers: [CookieService,LoginGuard,LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
