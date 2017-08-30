@@ -10,17 +10,18 @@ import { LoginComponent } from './components/login-component/login.component';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpModule } from '@angular/http';
 import {LoginGuard,LoginService} from './services/all-services';
-
 import { fakeBackendProvider } from './services/fake-back'
 import { MockBackend, MockConnection } from '@angular/http/testing';
 import { BaseRequestOptions } from '@angular/http';
+import { RegisterComponent } from './components/register-component/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
