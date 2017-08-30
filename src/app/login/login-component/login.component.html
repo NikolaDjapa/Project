@@ -1,0 +1,6 @@
+<h2>Login</h2>
+<form (submit)='login(username.value,password.value)'>
+<input #username type='text' required pattern="[a-zA-Z0-9]{5,}@[a-z]{3,5}.com" placeholder="Username"><br>
+<input #password type="password" required placeholder="Password"><br>
+<button type="submit" >Login</button>
+</form>
