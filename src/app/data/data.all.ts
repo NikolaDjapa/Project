@@ -1,0 +1,1 @@
+export {LoginDataComponent} from "./login-data/login-data.component";
