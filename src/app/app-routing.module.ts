@@ -7,7 +7,8 @@ import {             //data import
 }
 from "./data/data.all"
 import {   //components import
-LoginComponent
+LoginComponent,
+RegisterComponent
 } from "./components/allComponents"
 
 const routes: Routes = [
@@ -15,6 +16,12 @@ const routes: Routes = [
     path: '',
     pathMatch: 'full',
     component: LoginComponent,
+    children: [],
+  },
+  {
+    path: 'signup',
+    pathMatch: 'full',
+    component: RegisterComponent,
     children: [],
   },
   {
