@@ -10,11 +10,10 @@ import {LoginService} from "./login-service/login.service"
   providers:[LoginService]
 })
 export class LoginComponent implements OnInit {
- 
+  message:string="";
   usrName: string;
   pass: string;
   constructor(private router: Router,private cookieService: CookieService,private loginService:LoginService) {
-      console.log(loginService.getUsers());
   }
 
   ngOnInit() {
@@ -23,11 +22,16 @@ export class LoginComponent implements OnInit {
 
   login(usr,pass)
   {
-    if(usr=='danica@gmail.com' && pass=='danica')
-    {
-      this.cookieService.set("user",usr);
-      this.router.navigate(['roles']);
-    }
+    let users=this.loginService.getUsers();
+    users.forEach(user => {
+      if(usr==user.userName && pass==user.password)
+        {
+          this.cookieService.set("user",usr);
+          this.router.navigate(['roles']);
+          return;
+        }
+    });
+      this.message="Wrong username or password!!";
   }
 
 }
