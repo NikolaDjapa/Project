@@ -6,9 +6,9 @@ import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { RolesModule } from './roles/roles.module';
 import { UsersModule } from './users/users.module';
-import { LoginComponent } from './login/login-component/login.component';
+import { LoginComponent } from './components/login-component/login.component';
 import { CookieService } from 'ngx-cookie-service';
-
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -22,6 +22,7 @@ import { CookieService } from 'ngx-cookie-service';
 
     UsersModule,
     RolesModule,
+    HttpModule,
 
     AppRoutingModule
   ],

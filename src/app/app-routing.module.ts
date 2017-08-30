@@ -6,7 +6,9 @@ import {             //data import
   
 }
 from "./data/data.all"
-import { LoginComponent} from './login/login-component/login.component'
+import {   //components import
+LoginComponent
+} from "./components/allComponents"
 
 const routes: Routes = [
   {
