@@ -1,6 +1,7 @@
 <h2>Login</h2>
-<form (submit)='login(username.value,password.value)'>
-<input #username type='text' required pattern="[a-zA-Z0-9]{5,}@[a-z]{3,5}.com" placeholder="Username"><br>
+<form>
+<input #username type='text' required pattern="[a-zA-Z0-9]{5,}@[a-z]{3,5}.com" placeholder="Username" oninvalid="this.setCustomValidity('Please Enter valid email')"><br>
 <input #password type="password" required placeholder="Password"><br>
-<button type="submit" >Login</button>
+<button (click)='login(username.value,password.value)' >Login</button>
+<p style="color:red">{{message}}</p>
 </form>

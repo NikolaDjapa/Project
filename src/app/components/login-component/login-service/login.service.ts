@@ -10,10 +10,12 @@ export class LoginService {
   private users:User[];
   getUsers() {
     return     this.users=[
-      {userName:"admin",
-      password:"admin"},
-      {userName:"user",
-      password:"user"},
+      {userName:"admin@admin.com",
+      password:"admin",
+      role:"admin"},
+      {userName:"user@user.com",
+      password:"user",
+      role:"freeuser"},
     ]
   }
 
