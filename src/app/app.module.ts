@@ -10,6 +10,8 @@ import { LoginComponent } from './components/login-component/login.component';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
+import {LoginGuard} from './services/all-services';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +28,7 @@ import { FormsModule } from '@angular/forms';
 
     AppRoutingModule
   ],
-  providers: [CookieService],
+  providers: [CookieService,LoginGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

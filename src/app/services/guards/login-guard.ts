@@ -9,7 +9,7 @@ export class LoginGuard implements CanActivate {
 
    canActivate(): boolean {
       if(this.cookie.get('user')!='')
-         this.router.navigate(['access-denied']);
+         return true;
       else
         this.router.navigate(['']);
        return false;
