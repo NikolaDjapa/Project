@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
   login(usr, pass, event) {
     event.preventDefault();
     let user = new User();
-    user.userName = usr;
+    user.username = usr;
     user.password = pass;
     user.role = "admin";
     this.loginService.checkUser(user).subscribe(
@@ -32,9 +32,13 @@ export class LoginComponent implements OnInit {
         console.log(data);
         this.loginService.logSucc();
         this.cookieService.set("user", usr);
-        // this.router.navigate(['roles']);
+        this.router.navigate(['roles']);
       },
       error => { this.message = "Wrong username or password!!";});  // failed login
+  }
+
+  redirect(){
+    this.router.navigate(["signup"]);
   }
 
 }

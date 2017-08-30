@@ -18,10 +18,10 @@ export class RegisterServiceService {
   private users:any[];
   getUsers() {
     return     this.users=[
-      {userName:"admin@admin.com",
+      {username:"admin@admin.com",
       password:"admin",
       role:"admin"},
-      {userName:"user@user.com",
+      {username:"user@user.com",
       password:"user",
       role:"freeuser"},
     ]

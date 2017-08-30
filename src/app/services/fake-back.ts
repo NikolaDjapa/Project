@@ -15,22 +15,22 @@ export function fakeBackendFactory(backend: MockBackend, options: BaseRequestOpt
             if (connection.request.url.endsWith('/api/authenticate') && connection.request.method === RequestMethod.Post) {
                 // get parameters from post request
                 let params = JSON.parse(connection.request.getBody());
+                console.log(params);
  
                 // find if any user matches login credentials
                 let filteredUsers = users.filter(user => {
-                    return user.userName === params.username && user.password === params.password;
+                    return (user.username === params.username && user.password === params.password);
                 });
  
                 if (filteredUsers.length) {
                     // if login details are valid return 200 OK with user details and fake jwt token
                     let user = filteredUsers[0];
+                    console.log("Korisnike je "+JSON.stringify(user));
                     connection.mockRespond(new Response(new ResponseOptions({
                         status: 200,
                         body: {
                             id: user.id,
                             username: user.username,
-                            firstName: user.firstName,
-                            lastName: user.lastName,
                             token: 'fake-jwt-token'
                         }
                     })));
@@ -79,6 +79,7 @@ export function fakeBackendFactory(backend: MockBackend, options: BaseRequestOpt
             if (connection.request.url.endsWith('/api/CreateUser') && connection.request.method === RequestMethod.Post) {
                 // get new user object from post body
                 let newUser = JSON.parse(connection.request.getBody());
+                console.log(newUser);
  
                 // validation
                 let duplicateUser = users.filter(user => { return user.username === newUser.username; }).length;

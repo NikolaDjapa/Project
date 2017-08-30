@@ -3,5 +3,5 @@
 <form>
 <input #username type='email' required pattern="[a-zA-Z0-9]{5,}@[a-z]{3,5}.com" placeholder="Username" oninvalid="this.setCustomValidity('Please Enter valid email')"><br>
 <input #password type="password" required placeholder="Password"><br>
-<button (click)='login(username.value,password.value,$event)'>Login</button>
+<button (click)='login(username.value,password.value,$event)'>Login</button> <button (click)='redirect()'>Register</button>
 </form>
