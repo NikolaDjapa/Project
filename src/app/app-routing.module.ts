@@ -6,17 +6,16 @@ import {             //data import
   
 }
 from "./data/data.all"
+=======
+import { LoginComponent} from './login/login-component/login.component'
+>>>>>>> 411386fd25ee9dd650129e8b39b9cad7e027efc9
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    component: HomeComponent,
+    component: LoginComponent,
     children: [],
-  },
-  {
-    path: 'userData',
-    component:LoginDataComponent
   },
   {
     path: '**',

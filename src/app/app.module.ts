@@ -1,20 +1,21 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { RolesModule } from './roles/roles.module';
 import { UsersModule } from './users/users.module';
-import { LoginDataComponent } from './data/login-data/login-data.component';
+import { LoginComponent } from './login/login-component/login.component';
+import { CookieService } from 'ngx-cookie-service';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     HomeComponent,
-    LoginDataComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +25,7 @@ import { LoginDataComponent } from './data/login-data/login-data.component';
 
     AppRoutingModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
