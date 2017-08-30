@@ -9,6 +9,7 @@ import { UsersModule } from './users/users.module';
 import { LoginComponent } from './components/login-component/login.component';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpModule } from '@angular/http';
+import {LoginGuard} from './services/all-services';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { HttpModule } from '@angular/http';
 
     AppRoutingModule
   ],
-  providers: [CookieService],
+  providers: [CookieService,LoginGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
