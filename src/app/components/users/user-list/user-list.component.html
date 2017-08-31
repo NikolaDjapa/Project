@@ -1,3 +1,8 @@
 <div>
-  <p *ngFor="let user of users">{{user.username}}</p>
+  <div *ngFor="let user of users" class='card card-container'>
+      User Name: <p>{{user.username}} </p><br>
+      Name: {{user.fname}}{{user.lname}}<br>
+      Gender: {{user.gender}} <br>
+      Address: {{user.address}} <br>   
+  </div>
 </div>
