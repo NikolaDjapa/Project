@@ -25,6 +25,7 @@ export class LoginService {
   logMeOut()
   {
     this.cookie.deleteAll();
+    setTimeout(function(){},100);
     this.boolSubject.next(false);
     this.router.navigate(['']);
   }

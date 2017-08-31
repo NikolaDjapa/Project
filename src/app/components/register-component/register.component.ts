@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   providers:[RegisterServiceService]
 })
 export class RegisterComponent implements OnInit {
-  private mesage="";
+  private message="";
   constructor(private registerServiceService:RegisterServiceService,private router: Router,) { }
 
   ngOnInit() {
@@ -19,7 +19,8 @@ export class RegisterComponent implements OnInit {
     this.registerServiceService.createUser(user).subscribe(
       res=>{
       this.router.navigate(['']);
-    },error=>{this.mesage="User already exists!!!"})
+      console.log("TRUE")
+    },error=>{this.message="User already exists!!!";console.log("FALSE")})
   }
 
 }
