@@ -14,6 +14,7 @@ import { fakeBackendProvider } from './core/fake-back'
 import { MockBackend, MockConnection } from '@angular/http/testing';
 import { BaseRequestOptions } from '@angular/http';
 import { RegisterComponent } from './components/register-component/register.component';
+import { FormsModule }from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { RegisterComponent } from './components/register-component/register.comp
     RolesModule,
     HttpModule,
 
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
   ],
   providers: [CookieService,LoginGuard, 
     fakeBackendProvider,

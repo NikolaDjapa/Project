@@ -1,18 +1,16 @@
-
 <div class="container">
     <div class="card card-container">
-<h2>Sign Up</h2>
-<p style="color:red">{{message}}</p>
-<form>
-<input class='form-control' #email type='email' required pattern="[a-zA-Z0-9]{5,}@[a-z]{3,5}.com" placeholder="E-mail" oninvalid="this.setCustomValidity('Please Enter valid email')"><br>
-<input class='form-control' #password type="password" required placeholder="Password"><br>
-<input class='form-control' #password2 type="password" required placeholder="Confirm password" ><br>
-<input class='form-control' #fname type='text' required placeholder="Firstname"><br>
-<input class='form-control' #lname type='text' required placeholder="Lastname"><br>
-<input class='form-control' #gender type='text' required placeholder="Gender"><br>
-<input class='form-control' #address type='text' required placeholder="Address"><br>
-
-<button class="btn btn-lg btn-primary btn-block btn-signin" (click)='signUp(email.value,password.value,fname.value,lname.value,gender.value,address.value,$event)'>Sign Up</button>
-</form>
-</div>
+        <h2>Sign Up</h2>
+        <p style="color:red">{{message}}</p>
+        <form #form="ngForm" (ngSubmit)='signUp(email.value,password.value,fname.value,lname.value,gender.value,address.value,$event)' ngNativeValidate>
+            <input class='form-control' name="email" #email type='email' required placeholder="E-mail" ngModel><br>
+            <input class='form-control' name="password" #password type="password" required placeholder="Password" ngModel><br>
+            <input class='form-control' #password2 type="password" required placeholder="Confirm password"><br>
+            <input class='form-control' name="fname" #fname type='text' required placeholder="Firstname" ngModel><br>
+            <input class='form-control' name="lname" #lname type='text' required placeholder="Lastname" ngModel><br>
+            <input class='form-control' name="gender" #gender type='text' required placeholder="Gender" ngModel><br>
+            <input class='form-control' name="adress" #address type='text' required placeholder="Address" ngModel ><br>
+            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign Up</button>
+        </form>
+    </div>
 </div>
