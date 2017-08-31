@@ -1,6 +1,6 @@
 import { Component, OnInit,OnChanges,Input } from '@angular/core';
 import {CookieService} from 'ngx-cookie-service'
-import {LoginService} from '../services/all-services';
+import {LoginService} from '../../services/all-services';
 
 @Component({
   selector: 'app-nav',

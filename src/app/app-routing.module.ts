@@ -1,4 +1,3 @@
-import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {             //data import
@@ -8,7 +7,8 @@ import {             //data import
 from "./data/data.all"
 import {   //components import
 LoginComponent,
-RegisterComponent
+RegisterComponent,
+HomeComponent,
 } from "./components/allComponents"
 
 const routes: Routes = [
