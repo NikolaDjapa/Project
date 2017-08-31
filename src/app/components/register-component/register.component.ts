@@ -13,9 +13,9 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
   }
-  signUp(email, password, password2, event) {
+  signUp(email, password, fname,lname,gender,address, event) {
     event.preventDefault();
-    let user = ({username: email, password: password });
+    let user = ({username: email, password: password,fname: fname,lname:lname,gender:gender,address: address });
     this.registerServiceService.createUser(user).subscribe(
       res=>{
       this.router.navigate(['']);
