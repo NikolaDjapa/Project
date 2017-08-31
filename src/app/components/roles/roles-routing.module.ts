@@ -2,7 +2,7 @@ import { RoleComponent } from './role/role.component';
 import { RoleListComponent } from './role-list/role-list.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginGuard } from '../services/all-services'
+import { LoginGuard } from '../../services/all-services'
 
 const routes: Routes = [
   {
